@@ -26,8 +26,11 @@ public class Pessoa {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		
-		return super.equals(obj);
+	public String toString() {
+		Emprego e = getEmprego();
+		String tipoEmprego = e==null? "Desempregado": e.toString();
+		return "Pessoa: "+getNome()+ "; Emprego: " +tipoEmprego;
 	}
+	
+	
 }

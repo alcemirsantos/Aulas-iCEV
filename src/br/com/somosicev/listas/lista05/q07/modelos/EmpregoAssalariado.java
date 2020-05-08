@@ -7,4 +7,6 @@ public class EmpregoAssalariado extends Emprego {
 		return 0;
 	}
 
+	
+
 }

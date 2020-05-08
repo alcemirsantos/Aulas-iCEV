@@ -1,11 +1,11 @@
-package br.com.somosicev.listas.agenda.modelo.bd;
+package br.com.somosicev.tp.agenda.modelo.db;
 
 import java.util.List;
 import java.util.Map;
 
-import br.com.somosicev.listas.agenda.modelo.Pessoa;
-import br.com.somosicev.listas.agenda.modelo.PessoaFisica;
-import br.com.somosicev.listas.agenda.modelo.PessoaJuridica;
+import br.com.somosicev.tp.agenda.modelo.Pessoa;
+import br.com.somosicev.tp.agenda.modelo.PessoaFisica;
+import br.com.somosicev.tp.agenda.modelo.PessoaJuridica;
 
 public class BDPessoaJuridica extends BD{
 	

@@ -7,4 +7,5 @@ public class EmpregoHorista extends Emprego {
 		return 0;
 	}
 
+
 }

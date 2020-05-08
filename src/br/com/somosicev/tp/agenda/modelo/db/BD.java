@@ -1,8 +1,8 @@
-package br.com.somosicev.listas.agenda.modelo.bd;
+package br.com.somosicev.tp.agenda.modelo.db;
 
 import java.util.List;
 
-import br.com.somosicev.listas.agenda.modelo.Pessoa;
+import br.com.somosicev.tp.agenda.modelo.Pessoa;
 
 public abstract class BD {
 

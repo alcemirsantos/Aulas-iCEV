@@ -1,6 +1,6 @@
-package br.com.somosicev.listas.agenda.modelo;
+package br.com.somosicev.tp.agenda.modelo;
 
-import br.com.somosicev.listas.agenda.modelo.enums.TipoTelefone;
+import br.com.somosicev.tp.agenda.modelo.enums.TipoTelefone;
 
 public class Telefone {
 

@@ -1,4 +1,4 @@
-package br.com.somosicev.listas.agenda.modelo;
+package br.com.somosicev.tp.agenda.modelo;
 
 public abstract class Pessoa {
 

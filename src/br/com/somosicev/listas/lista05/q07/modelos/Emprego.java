@@ -7,7 +7,7 @@ public abstract class Emprego {
 	Trabalho tipo;
 	
 	public Emprego() {
-		
+	
 	}
 
 	public Emprego(double salarioInicial) {
@@ -34,6 +34,7 @@ public abstract class Emprego {
 		}
 		return 0;
 	}
+	
 	
 	
 }

@@ -7,11 +7,11 @@ import br.com.somosicev.classes.aula15.abstratas.iu.ObservadorAbstrato;
 
 public class CoisaObservada {
 	
-	private List<ObservadorAbstrato> observers = new ArrayList<ObservadorAbstrato>();
+	private List<ObservadorAbstrato> observardores = new ArrayList<ObservadorAbstrato>();
 	private int state;
 
 	public void add(ObservadorAbstrato o) {
-		observers.add(o);
+		observardores.add(o);
 	}
 
 	public int getState() {
@@ -20,12 +20,12 @@ public class CoisaObservada {
 
 	public void setState(int value) {
 		this.state = value;
-		execute();
+		notificaObservadores();
 	}
 
-	private void execute() {
-		for (ObservadorAbstrato Observador : observers) {
-			Observador.update();
+	private void notificaObservadores() {
+		for (ObservadorAbstrato observador : observardores) {
+			observador.update();
 		}
 	}
 }

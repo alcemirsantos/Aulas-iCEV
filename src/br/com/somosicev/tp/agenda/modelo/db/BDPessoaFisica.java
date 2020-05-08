@@ -1,9 +1,9 @@
-package br.com.somosicev.listas.agenda.modelo.bd;
+package br.com.somosicev.tp.agenda.modelo.db;
 
 import java.util.List;
 import java.util.Map;
 
-import br.com.somosicev.listas.agenda.modelo.Pessoa;
+import br.com.somosicev.tp.agenda.modelo.Pessoa;
 
 public class BDPessoaFisica extends BD {
 	

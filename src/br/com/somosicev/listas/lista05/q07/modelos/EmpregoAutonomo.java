@@ -7,4 +7,5 @@ public class EmpregoAutonomo extends Emprego {
 		return 0;
 	}
 
+
 }
