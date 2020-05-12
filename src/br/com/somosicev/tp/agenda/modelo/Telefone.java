@@ -8,6 +8,12 @@ public class Telefone {
 	private String ddd;
 	private String numero;
 
+	public Telefone(TipoTelefone tipo, String ddd, String numero) {
+		setTipo(tipo);
+		setDdd(ddd);
+		setNumero(numero);
+	}
+
 	public TipoTelefone getTipo() {
 		return tipo;
 	}
@@ -30,6 +36,11 @@ public class Telefone {
 
 	public void setNumero(String numero) {
 		this.numero = numero;
+	}
+	
+	@Override
+	public String toString() {
+		return "Tel: ("+getDdd()+") "+getNumero();
 	}
 
 }

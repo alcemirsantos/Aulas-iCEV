@@ -4,6 +4,13 @@ public class PessoaFisica extends Pessoa {
 
 	private CPF cpf;
 	
+	public PessoaFisica(String umNome, CPF umDocumento, Endereco umEndereco, Telefone umTelefone) {
+		setNome(umNome);
+		setDocumento(umDocumento);
+		setEndereco(umEndereco);
+		setTelefone(umTelefone);
+	}
+
 	@Override
 	Documento getDocumento() {
 		return this.cpf;

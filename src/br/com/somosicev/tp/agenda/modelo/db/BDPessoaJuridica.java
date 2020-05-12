@@ -12,19 +12,19 @@ public class BDPessoaJuridica extends BD{
 	private Map<PessoaFisica, List<PessoaJuridica>> cadastrosPJ;
 
 	@Override
-	protected List<Pessoa> buscar(Pessoa p) {
+	public List<Pessoa> buscar(Pessoa p) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	protected void adicionar(Pessoa nova) {
+	public void adicionar(Pessoa nova) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	protected void remover(Pessoa velha) {
+	public void remover(Pessoa velha) {
 		// TODO Auto-generated method stub
 		
 	}

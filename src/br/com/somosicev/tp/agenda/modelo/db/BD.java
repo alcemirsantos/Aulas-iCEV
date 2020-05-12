@@ -6,11 +6,33 @@ import br.com.somosicev.tp.agenda.modelo.Pessoa;
 
 public abstract class BD {
 
-	protected abstract List<Pessoa> buscar(Pessoa p);
-	protected abstract void adicionar(Pessoa nova);
-	protected abstract void remover(Pessoa velha);
-	protected void atualizar(Pessoa nova) {
-		remover(nova);
+	/**
+	 * Adiciona uma nova {@linkplain Pessoa} à base de dados.
+	 * 
+	 * @param nova
+	 */
+	public abstract void adicionar(Pessoa nova);
+	/**
+	 * Retorna uma lista de {@linkplain Pessoa} utilizando {@code Pessoa p} 
+	 * como parâmetro.
+	 * 
+	 * @param p
+	 * @return
+	 */
+	public abstract List<Pessoa> buscar(Pessoa p);
+	/**
+	 * Remove a {@code Pessoa velha} da base de dados.
+	 * 
+	 * @param velha
+	 */
+	public abstract void remover(Pessoa velha);
+	
+	/**
+	 * At
+	 * @param nova
+	 */
+	public void atualizar(Pessoa velha, Pessoa nova) {
+		remover(velha);
 		adicionar(nova);
 	}
 
