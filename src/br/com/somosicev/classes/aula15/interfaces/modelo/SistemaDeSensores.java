@@ -14,8 +14,13 @@ public class SistemaDeSensores {
     }
 
     public void soarAlarme() {
-        for (Enumeration<EscutadorDeAlarme> e = listeners.elements(); e.hasMoreElements();) {
-            ((EscutadorDeAlarme) e.nextElement()).alarmar();
+    	
+    	// for( ponto de partida ; ponto parada; passo) 
+        for (Enumeration<EscutadorDeAlarme> e = listeners.elements(); e.hasMoreElements();  ) {
+        
+        	EscutadorDeAlarme escutador = (EscutadorDeAlarme) e.nextElement();
+        	escutador.alarmar();
+        	
         }
     }
 

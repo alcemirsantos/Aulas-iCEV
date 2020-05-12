@@ -1,11 +1,10 @@
 package br.com.somosicev.classes.aula15.interfaces.visao;
 
-public class Portao implements EscutadorDeAlarme {
-
+public class Drone implements EscutadorDeAlarme {
 
 	@Override
 	public void alarmar() {
-		System.out.println("Fechar Portão!");
+		System.out.println("  ligar pra polícia" );
 	}
 
 }

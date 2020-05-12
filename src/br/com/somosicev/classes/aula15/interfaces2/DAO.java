@@ -2,6 +2,12 @@ package br.com.somosicev.classes.aula15.interfaces2;
 
 import java.util.List;
 
+
+/**
+ * Data Access Object
+ * 
+ * @author alcemirsantos
+ */
 public interface DAO {
 
 	public void salvar(Object o);

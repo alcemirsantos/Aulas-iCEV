@@ -3,7 +3,7 @@ package br.com.somosicev.classes.aula15.interfaces.controle;
 public class SistemaDeControle {
 
 	// Padrão de projeto Template Method
-	public void pelosNumeros() {
+	public void controlarSeguranca() {
 		localizar();
 		isolar();
 		identificar();

@@ -12,13 +12,13 @@ public class SistemaDeVigilancia extends SistemaDeControle implements EscutadorD
 
 	@Override
 	public void alarmar() {
-		System.out.println("Vigilancia - pelos números:");
-		pelosNumeros();
+		System.out.println("Vigilancia :");
+		controlarSeguranca();
 	}
 
 	@Override
 	protected void isolar() {
-		System.out.println("   train the cameras");
+		System.out.println("   treinar as cameras");
 	}
 
 }
