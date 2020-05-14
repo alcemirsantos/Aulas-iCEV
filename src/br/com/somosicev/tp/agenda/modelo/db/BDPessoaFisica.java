@@ -8,7 +8,9 @@ import java.util.Map;
 import br.com.somosicev.tp.agenda.modelo.Pessoa;
 
 public class BDPessoaFisica extends BD {
-	
+	/*
+	 * armazenar para cada letra, uma lista de objetos Pessoa.  
+	 */
 	private Map<String, List<Pessoa>> contatos;
 	
 	public BDPessoaFisica() {
@@ -23,6 +25,7 @@ public class BDPessoaFisica extends BD {
 
 	@Override
 	public void adicionar(Pessoa nova) {
+		// "Alcemir"
 		String letraInicial = String.valueOf(nova.getNome().toUpperCase().charAt(0));
 		List<Pessoa> pessoasComEstaLetraInicial;
 		if(contatos.get(letraInicial) == null)

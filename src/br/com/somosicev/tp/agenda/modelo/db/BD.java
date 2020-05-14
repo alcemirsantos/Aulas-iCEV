@@ -28,7 +28,7 @@ public abstract class BD {
 	public abstract void remover(Pessoa velha);
 	
 	/**
-	 * At
+	 * Alterar uma pessoa da base de dados.
 	 * @param nova
 	 */
 	public void atualizar(Pessoa velha, Pessoa nova) {
