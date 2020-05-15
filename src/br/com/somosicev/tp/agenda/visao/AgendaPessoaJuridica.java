@@ -20,12 +20,12 @@ public class AgendaPessoaJuridica extends Agenda {
 		super.exibirMenuAcoes();
 		System.out.println("[1] Adicionar Pessoa Jurídica");
 //		System.out.println("[2] Listar");
-//		System.out.println("[3] Remover");	
+		System.out.println("[3] Remover");	
 	}
 
 	@Override
 	protected Pessoa criarPessoa() {
-		System.out.println("\n=== Cadastro de Pessoa Física ===");
+		System.out.println("\n=== Cadastro de Pessoa Jurídica ===");
 		// nome
 		String umNome = IU.coletaNome();
 		// endereco
@@ -34,6 +34,7 @@ public class AgendaPessoaJuridica extends Agenda {
 		Telefone umTelefone = IU.coletaTelefone(); 
 		// documento
 		CNPJ cnpj = IU.coletaCNPJ();
+    
 		
 //		PessoaFisica responsavel = new PessoaFisica(umNome, umDocumento, umEndereco, umTelefone);
 		return new PessoaJuridica(umNome, cnpj, umEndereco, umTelefone);
@@ -41,8 +42,7 @@ public class AgendaPessoaJuridica extends Agenda {
 
 	@Override
 	protected Documento coletarParametroDeBusca() {
-		// TODO Auto-generated method stub
-		return null;
+    return IU.coletaCNPJ();
 	}
 
 }

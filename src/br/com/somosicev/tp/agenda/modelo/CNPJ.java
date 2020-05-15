@@ -5,7 +5,6 @@ public class CNPJ extends Documento {
 	public CNPJ(String numero) {
 		setNumero(numero);
 	}
+  
 
-	
-	
 }

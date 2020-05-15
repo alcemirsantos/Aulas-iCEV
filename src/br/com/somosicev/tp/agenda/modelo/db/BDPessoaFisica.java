@@ -18,9 +18,21 @@ public class BDPessoaFisica extends BD {
 	}
 
 	@Override
-	public List<Pessoa> buscar(Pessoa p) {
-		// TODO Auto-generated method stub
-		return null;
+	public Pessoa buscar(Pessoa p) {
+    for(Entry<Integer, List<Pessoa>> entry : contatos.entrySet()) {
+      List <Pessoa> listaPessoa = entry.getValue();
+      if(entry.value.contains(p)){
+        int id = entry.getValue.indexOf(p);
+        return entry.value.get(i);
+        // System.out.println(p);
+      }else{
+         System.out.println("Pessoa não encontrada");
+         // TODO adicionar tratamento de exceções
+        return null;
+      }
+      
+    } 
+   
 	}
 
 	@Override
@@ -37,9 +49,20 @@ public class BDPessoaFisica extends BD {
 	}
 
 	@Override
-	public void remover(Pessoa velha) {
-		// TODO Auto-generated method stub
-
+	public void remover(Pessoa pessoaVelha) {
+		boolean controle = false;
+    for(Entry<Integer, List<Pessoa>> entry : contatos.entrySet()) {
+      List <Pessoa> pessoa = entry.getValue();
+      if pessoa.contains(pessoaVelha) {
+        boolean controle = true;
+        contatos.remove(pessoaVelha);
+      }
+    } 
+    if(controle == true) {
+      System.out.println("Pessoa removida com sucesso!");
+    }
+    else {
+      System.out.println("Pessoa não localizada!");
+    }
 	}
-
 }

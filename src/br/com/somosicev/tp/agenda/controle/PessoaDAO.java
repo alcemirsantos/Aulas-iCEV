@@ -5,7 +5,7 @@ import br.com.somosicev.tp.agenda.modelo.db.BD;
 public abstract class PessoaDAO implements DAO {
 
 	protected BD bd;
-	
+
 	@Override
 	public void adicionar(Object o) {
 	}

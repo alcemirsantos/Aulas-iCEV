@@ -20,21 +20,33 @@ public class PessoaFisicaDAO extends PessoaDAO {
 	}
 
 	@Override
-	public void buscar(Object o) {
-		// TODO Auto-generated method stub
-
+	public PessoaFisica buscar(Object o) {
+    PessoaFisica alvo = null;
+    if(o instanceof PessoaFisica) {
+      alvo = (PessoaFisica) o;
+      return bd.buscar(alvo);
+    }
+    return null;
 	}
 
 	@Override
 	public void remover(Object o) {
-		// TODO Auto-generated method stub
-
+    PessoaFisica alvo = null;
+    if(o instanceof PessoaFisica) {
+      alvo = (PessoaFisica) o;
+      bd.remover(alvo);
+    }
 	}
 
 	@Override
 	public void alterar(Object velho, Object novo) {
-		// TODO Auto-generated method stub
-
+    PessoaFisica velha = null;
+    PessoaFisica nova = null;
+    if((velho instanceof PessoaFisica)&&()) {
+      velha = (PessoaFisica) velho;
+      nova = (PessoaFisica) novo;
+      bd.atualizar(velha,nova);
+    }
 	}
 
 }

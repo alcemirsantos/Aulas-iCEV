@@ -106,8 +106,13 @@ public class IU {
 		return new CNPJ(numero);
 	}
 
+public static boolean confirmar(){
+  teclado = new Scanner(System.in);
+  System.out.println("digite 1 se sim digite 2 se não:")
+  int a = Integer.valueOf(teclado.next());
+  return (a==1)? true: false;
+}
 	public static void close() {
 		teclado.close();
 	}
-
 }
