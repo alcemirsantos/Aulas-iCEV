@@ -12,40 +12,26 @@ public class PessoaJuridicaDAO implements DAO {
 
 	@Override
 	public void adicionar(Object o) {
-    PessoaJuridica nova = null;
-    if (o instanceof PessoaJuridica) {
-			nova = (PessoaJuridica) o;
-			bd.adicionar(nova);
+		// TODO Auto-generated method stub
+		bd.get
 	}
 
 	@Override
-	public PessoaJuridica buscar(Object o) {
-    PessoaJuridica alvo = null;
-    if (o instanceof PessoaJuridica) {
-      alvo = (PessoaJuridica) o;
-      bd.buscar(alvo)
-    }
-    return null;
+	public void buscar(Object o) {
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public void remover(Object o) {
-    PessoaJuridica alvo = null;
-    if (o instanceof PessoaJuridica) {
-      alvo = (PessoaJuridica) o;
-      bd.remover(alvo)
-    }
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public void alterar(Object velho, Object novo) {
 		// TODO Auto-generated method stub
-    PessoaJuridica velha = null;
-    PessoaJuridica nova = null;
-    if (velho and novo instanceof PessoaJuridica) {
-      velha = (PessoaJuridica) velho;
-      nova = (PessoaJuridica) nova;
-      bd.atualizar(velha,nova)
-    }
+
 	}
+
 }
