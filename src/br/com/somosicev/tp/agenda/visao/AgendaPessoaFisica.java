@@ -7,10 +7,9 @@ import br.com.somosicev.tp.agenda.modelo.Endereco;
 import br.com.somosicev.tp.agenda.modelo.Pessoa;
 import br.com.somosicev.tp.agenda.modelo.PessoaFisica;
 import br.com.somosicev.tp.agenda.modelo.Telefone;
-import java.util.Scanner
 
 public class AgendaPessoaFisica extends Agenda {
-	
+
 	public AgendaPessoaFisica() {
 		dao = new PessoaFisicaDAO();
 	}
@@ -21,10 +20,9 @@ public class AgendaPessoaFisica extends Agenda {
 		System.out.println("[1] Adicionar Pessoa Física");
 		System.out.println("[2] Listar");
 		System.out.println("[3] Remover");
-		System.out.println("[4] Alterar");	
-    
+		System.out.println("[4] Alterar");
+
 	}
-	
 
 	@Override
 	protected Pessoa criarPessoa() {
@@ -34,16 +32,21 @@ public class AgendaPessoaFisica extends Agenda {
 		// endereco
 		Endereco umEndereco = IU.coletaEndereco();
 		// telefone
-		Telefone umTelefone = IU.coletaTelefone(); 
+		Telefone umTelefone = IU.coletaTelefone();
 		// documento
 		CPF umDocumento = IU.coletaCPF();
 		return new PessoaFisica(umNome, umDocumento, umEndereco, umTelefone);
 	}
 
-  @Override
+	@Override
 	protected Documento coletarParametroDeBusca() {
-    return IU.coletaCPF();
+		return IU.coletaCPF();
+	}
+
+	@Override
+	protected Pessoa coletaPessoaNova() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
-

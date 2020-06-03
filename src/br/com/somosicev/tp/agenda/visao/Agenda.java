@@ -11,7 +11,7 @@ import br.com.somosicev.tp.agenda.modelo.Telefone;
 public abstract class Agenda {
 
 	protected DAO dao;
-	
+
 	public void inicia() {
 		// Template Method
 		exibirMenuAcoes();
@@ -23,7 +23,7 @@ public abstract class Agenda {
 	 * Exibe o menu principal da Agenda.
 	 */
 	protected void exibirMenuAcoes() {
-		System.out.println("\n:: MENU DE AÇÕES ::");	
+		System.out.println("\n:: MENU DE AÇÕES ::");
 	}
 
 	/**
@@ -34,10 +34,8 @@ public abstract class Agenda {
 	protected void executar(int acao) {
 		switch (acao) {
 		case 1: // adicionar
-			Pessoa p = criarPessoa(); 
-			dao.adicionar(p);
-			System.out.println("\nPessoa cadastra com sucesso!");
-			System.out.println(p);
+			Pessoa nova = criarPessoa(); 
+			adicionar(nova);
 			break;
 		case 2:  // buscar
 			Documento d = coletarParametroDeBusca();
@@ -76,10 +74,22 @@ public abstract class Agenda {
 		System.out.println("=======");
 	}
 
-	
+	public boolean adicionar(Pessoa nova) {
+		try {
+			dao.adicionar(nova);
+		} catch (Exception e) {
+			// TODO tratar exceção
+			return false;
+		}
+		System.out.println("\nPessoa cadastra com sucesso!");
+		System.out.println(nova);
+		return true;
+	}
+
 	/**
-	 * Cria uma objeto do tipo {@link Pessoa} com o objetivo de salvar na base 
-	 * de dados. Esta pode ser uma {@link PessoaFisica} ou {@link PessoaJuridica}.
+	 * Cria uma objeto do tipo {@link Pessoa} com o objetivo de salvar na base de
+	 * dados. Esta pode ser uma {@link PessoaFisica} ou {@link PessoaJuridica}.
+	 * 
 	 * @return
 	 */
 	protected abstract Documento coletarParametroDeBusca();
@@ -91,8 +101,7 @@ public abstract class Agenda {
 	 */
 	protected abstract Pessoa criarPessoa();
 
-
-  protected abstract Pessoa coletaPessoaNova(velha);{
+	protected Pessoa coletaPessoaNova(){
 nova = velha;
 System.out.pintln("o que deseja alterar ?")
   }

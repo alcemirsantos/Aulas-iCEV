@@ -47,7 +47,7 @@ public class IU {
 	private static String coletaEntradaDoTeclado() {
 		teclado = new Scanner(System.in);
 		System.out.print("Digite: ");
-		 
+
 		String entrada = teclado.nextLine();
 		return entrada;
 	}
@@ -71,6 +71,7 @@ public class IU {
     }while(deuErro);
     return nome;
   }
+
 	public static Endereco coletaEndereco() {
 		// TODO adicionar tratamento de exceções.
 		exibirMenuDeTipoDeEndereco();
@@ -89,7 +90,7 @@ public class IU {
 		return TipoLogradouro.RUA;
 	}
 
-	public static Telefone coletaTelefone() {
+	public static Telefone coletaTelefone() throws Exception {
     boolean continuar = false;
     while (!continuar) {
       try {
@@ -98,12 +99,12 @@ public class IU {
         System.out.println("Precisamos do código DDD...");
         String ddd = coletaEntradaDoTeclado();
         if(!ddd.matches("[0-9]{0,1}[0-9]{2}")){
-          throws new Exception("O DDD deve ter 2 ou 3 números");
+          throw new Exception("O DDD deve ter 2 ou 3 números");
         }
         System.out.println("Agora o número de seu telefone (sem o DDD ;-))...");
         String numero = coletaEntradaDoTeclado();
-        if (!numero.matches("[0-9]{8,9})") // "[0-9]{4,5}-[0-9]{4}"
-          throws new Exception("O número deve ter 8 ou 9 números");
+        if (!numero.matches("\\d{8,9})") // "[0-9]{4,5}-[0-9]{4}"
+          throw new Exception("O número deve ter 8 ou 9 números");
         continuar =true;
       }catch (Exception e) {
         //tratar a exceção
@@ -113,7 +114,15 @@ public class IU {
     }
     return new Telefone(tipo, ddd, numero); 
     }
-
+	
+	
+	
+	public static boolean validaNumeroTelefone(String numero) throws Exception {
+		if(!numero.matches("\\d{4,5}-\\d{4}")){
+			throw new Exception();
+		}
+		return true;
+	}
 
 	private static TipoTelefone getTipoTelefone(int opcao) {
 		if (opcao == 1)
@@ -123,26 +132,30 @@ public class IU {
 		return TipoTelefone.CELULAR;
 	}
 
-/**
-*
-*/
-	public static CPF coletaCPF() {
+	/**
+	*
+	*/
+	public static CPF coletaCPF() throws Exception {
 		boolean deuErro = false;
-    do {  
-      try {
-        System.out.println("Qual o número do seu CPF?");
-        String numero = coletaEntradaDoTeclado();
-        if(!(numero.matches("\\d{3}.\\d{3}.\\d{3}-\\d{2}"))) 
-          throws new Exception("O CPF deve conter 11 dígitos");
-      }catch(Exception e){
-          System.out.println(e.getMessage());
-          deuErro = true;
-      } 
-    }while(deuErro);
-    return new CPF(numero);
+		String numero = null;
+		do {
+			try {
+				System.out.println("Qual o número do seu CPF?");
+				numero = coletaEntradaDoTeclado();
+				validaCPF(numero);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+				deuErro = true;
+			}
+		} while (deuErro);
+		return new CPF(numero);
 	}
 
-
+	public static boolean validaCPF(String cpf) throws Exception {
+		if (!(cpf.matches("\\d{3}.\\d{3}.\\d{3}-\\d{2}")))
+				throw new Exception("O CPF deve conter 11 dígitos");
+		return true;
+	}
 
 	public static CNPJ coletaCNPJ() {
 		// TODO adicionar tratamento de exceções.
@@ -157,6 +170,7 @@ public static boolean confirmar(){
   int a = Integer.valueOf(teclado.next());
   return (a==1)? true: false;
 }
+
 	public static void close() {
 		teclado.close();
 	}

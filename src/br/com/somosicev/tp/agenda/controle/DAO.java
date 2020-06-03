@@ -1,5 +1,7 @@
 package br.com.somosicev.tp.agenda.controle;
 
+import java.util.List;
+
 public interface DAO {
 
 	/**
@@ -13,8 +15,9 @@ public interface DAO {
 	 * Busca um <code>Object</code> na base de dados.
 	 * 
 	 * @param o
+	 * @return 
 	 */
-	void buscar(Object o);
+	List<Object> buscar(Object o);
 
 	/**
 	 * Remove um <code>Object</code> da base de dados.
