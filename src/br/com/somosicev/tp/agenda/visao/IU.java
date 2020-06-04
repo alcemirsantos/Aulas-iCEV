@@ -34,13 +34,14 @@ public class IU {
 	}
 
 	public static int coletarOpcaoEscolhida() {
-    teclado = new Scanner(System.in);
-    try{
-    System.out.print("Digite sua opcao: ");
-    int opcao = Integer.valueOf(teclado.next());
-    }catch(NumberFormatException e) {
-      System.err.println("ERRO - Digite apenas numeros.")
-    }  
+		teclado = new Scanner(System.in);
+		int opcao = 0;
+		try {
+			System.out.print("Digite sua opcao: ");
+			opcao = Integer.valueOf(teclado.next());
+		} catch (NumberFormatException e) {
+			System.err.println("ERRO - Digite apenas numeros.");
+		}
 		return opcao;
 	}
 
@@ -52,18 +53,18 @@ public class IU {
 		return entrada;
 	}
 
-	public static String coletaNome() {
+	public static String coletaNome() throws Exception {
 		// TODO adicionar tratamento de exceções.
     //Matheus Magno esta fazendo...
-    String nome;
+    String nome="";
     boolean deuErro;
     do{
       deuErro = false;
       try{
         System.out.println("Qual o nome?");
         nome = coletaEntradaDoTeclado();
-        if(!nome.matches("[a-zA-Z]{2,}")// [a-zA-Z]
-          throws new Exception("O nome deve ter ao menos 2 ou letras.");
+        if(!nome.matches("[a-zA-Z]{2,}"))// [a-zA-Z]
+          throw new Exception("O nome deve ter ao menos 2 ou letras.");
       } catch(Exception e){
         System.err.println("Não é permitido numeros no nome" + e.getMessage());
         deuErro = true;
@@ -92,29 +93,32 @@ public class IU {
 
 	public static Telefone coletaTelefone() throws Exception {
     boolean continuar = false;
+    
+    String ddd="", numero = "";
+    TipoTelefone tipo = null;
+    
     while (!continuar) {
       try {
         exibirMenuDeTipoDeTelefone();
-        TipoTelefone tipo = getTipoTelefone(coletarOpcaoEscolhida());
+        tipo = getTipoTelefone(coletarOpcaoEscolhida());
         System.out.println("Precisamos do código DDD...");
-        String ddd = coletaEntradaDoTeclado();
+        ddd = coletaEntradaDoTeclado();
         if(!ddd.matches("[0-9]{0,1}[0-9]{2}")){
           throw new Exception("O DDD deve ter 2 ou 3 números");
         }
         System.out.println("Agora o número de seu telefone (sem o DDD ;-))...");
-        String numero = coletaEntradaDoTeclado();
-        if (!numero.matches("\\d{8,9})") // "[0-9]{4,5}-[0-9]{4}"
+        numero = coletaEntradaDoTeclado();
+        if (!numero.matches("\\d{8,9})")) // "[0-9]{4,5}-[0-9]{4}"
           throw new Exception("O número deve ter 8 ou 9 números");
         continuar =true;
       }catch (Exception e) {
         //tratar a exceção
-        System.err.println("Telefone ou DDD inválido! Digite novamente! Erro:"+e.getMessage())
+        System.err.println("Telefone ou DDD inválido! Digite novamente! Erro:"+e.getMessage());
       }
       
     }
     return new Telefone(tipo, ddd, numero); 
     }
-	
 	
 	
 	public static boolean validaNumeroTelefone(String numero) throws Exception {
@@ -166,12 +170,18 @@ public class IU {
 
 public static boolean confirmar(){
   teclado = new Scanner(System.in);
-  System.out.println("digite 1 se sim digite 2 se não:")
+  System.out.println("digite 1 se sim digite 2 se não:");
   int a = Integer.valueOf(teclado.next());
   return (a==1)? true: false;
 }
 
 	public static void close() {
 		teclado.close();
+	}
+
+	public boolean validaNome(String nome)throws Exception{
+		if (!(nome.matches("([A-Z][a-z]+\\s)+([A-Z][a-z]+)")))
+			throw new Exception("O Nome deve conter ao menos 2 palavras!");
+		return true;
 	}
 }

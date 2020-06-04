@@ -1,4 +1,4 @@
-package br.com.somosicev.agenda;
+package br.com.somosicev.agenda.create;
 
 import static org.junit.Assert.assertTrue;
 
