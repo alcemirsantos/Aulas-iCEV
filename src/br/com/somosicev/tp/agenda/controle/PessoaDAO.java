@@ -1,5 +1,7 @@
 package br.com.somosicev.tp.agenda.controle;
 
+import java.util.List;
+
 import br.com.somosicev.tp.agenda.modelo.db.BD;
 
 public abstract class PessoaDAO implements DAO {
@@ -7,19 +9,15 @@ public abstract class PessoaDAO implements DAO {
 	protected BD bd;
 
 	@Override
-	public void adicionar(Object o) {
-	}
+	abstract public void adicionar(Object o);
 
 	@Override
-	public void buscar(Object o) {
-	}
+	abstract public Object buscar(Object o);
 
 	@Override
-	public void remover(Object o) {
-	}
+	abstract public void remover(Object o);
 
 	@Override
-	public void alterar(Object velho, Object novo) {
-	}
+	abstract public void alterar(Object velho, Object novo);
 
 }

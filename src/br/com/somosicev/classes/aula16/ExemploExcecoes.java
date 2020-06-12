@@ -14,12 +14,12 @@ public class ExemploExcecoes {
 				a = s.nextInt();
 				b = s.nextInt();
 				result = divisao(b, a);
-			} catch (Exception e) {
-				System.err.println("Error 2:" + e.getMessage());
-				ok = true;
 			} catch (ArithmeticException e) {
 				// TODO: handle exception
 			
+			} catch (Exception e) {
+				System.err.println("Error 2:" + e.getMessage());
+				ok = true;
 			}
 
 		} while (ok);

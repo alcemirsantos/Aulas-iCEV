@@ -1,6 +1,7 @@
 package br.com.somosicev.tp.agenda.controle;
 
-import br.com.somosicev.tp.agenda.modelo.Pessoa;
+import java.util.List;
+
 import br.com.somosicev.tp.agenda.modelo.PessoaFisica;
 import br.com.somosicev.tp.agenda.modelo.db.BDPessoaFisica;
 
@@ -9,33 +10,33 @@ public class PessoaFisicaDAO extends PessoaDAO {
 	public PessoaFisicaDAO() {
 		bd = new BDPessoaFisica();
 	}
-	
+
 	@Override
 	public void adicionar(Object o) {
 		PessoaFisica nova = null;
-		if(o instanceof PessoaFisica) {
+		if (o instanceof PessoaFisica) {
 			nova = (PessoaFisica) o;
 			bd.adicionar(nova);
 		}
 	}
 
 	@Override
-	public PessoaFisica buscar(Object o) {
-    PessoaFisica alvo = null;
-    if(o instanceof PessoaFisica) {
-      alvo = (PessoaFisica) o;
-      return bd.buscar(alvo);
-    }
-    return null;
+	public List<Object> buscar(Object o) {
+		PessoaFisica alvo = null;
+		if (o instanceof PessoaFisica) {
+			alvo = (PessoaFisica) o;
+			return bd.buscar(alvo);
+		}
+		return null;
 	}
 
 	@Override
 	public void remover(Object o) {
-    PessoaFisica alvo = null;
-    if(o instanceof PessoaFisica) {
-      alvo = (PessoaFisica) o;
-      bd.remover(alvo);
-    }
+		PessoaFisica alvo = null;
+		if (o instanceof PessoaFisica) {
+			alvo = (PessoaFisica) o;
+			bd.remover(alvo);
+		}
 	}
 
 	@Override
