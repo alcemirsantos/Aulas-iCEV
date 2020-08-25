@@ -8,11 +8,7 @@ import java.util.Map;
 import br.com.somosicev.tp.agenda.modelo.Pessoa;
 
 public class BDPessoaFisica extends BD {
-	/*
-	 * armazenar para cada letra, uma lista de objetos Pessoa.  
-	 */
-	private Map<String, List<Pessoa>> contatos;
-	
+
 	public BDPessoaFisica() {
 		contatos = new HashMap<String, List<Pessoa>>();
 	}

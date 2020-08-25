@@ -5,7 +5,11 @@ import java.util.List;
 import br.com.somosicev.tp.agenda.modelo.Pessoa;
 
 public abstract class BD {
-
+	/*
+	 * armazenar para cada letra, uma lista de objetos Pessoa.  
+	 */
+	private Map<String, List<Pessoa>> contatos;
+	
 	/**
 	 * Adiciona uma nova {@linkplain Pessoa} à base de dados.
 	 * 
