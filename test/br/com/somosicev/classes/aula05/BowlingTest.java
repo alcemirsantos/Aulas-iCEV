@@ -4,6 +4,10 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import lp1.aula13.boliche.Arremesso;
+import lp1.aula13.boliche.Boliche;
+import lp1.aula13.boliche.Rodada;
+
 public class BowlingTest {
 
 
@@ -31,7 +35,7 @@ public class BowlingTest {
 		r1.um = a1;
 		r1.dois = a2;
 
-		assertTrue(r1.ehUmSpare());
+		assertTrue(r1.foiSpare());
 
 	}
 	
@@ -42,7 +46,7 @@ public class BowlingTest {
 
 		r1.um = a1;
 
-		assertTrue(r1.ehUmStrike());
+		assertTrue(r1.foiStrike());
 
 	}
 
@@ -103,9 +107,9 @@ public class BowlingTest {
 		// Dado que...
 		Boliche b  = new Boliche();
 		// Quando eu...
-		b.play("X 2/ 23");
+		b.play("X X X X X X X X X 64 X");
 		// Espero que...
-		assertTrue(b.getPontuacaoFinal() == 37);
+		assertTrue(b.getPontuacaoFinal() == 276);
 
 	}
 

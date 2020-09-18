@@ -1,4 +1,4 @@
-package br.com.somosicev.classes.aula05;
+package lp1.aula13.boliche;
 
 public class Arremesso {
 	
@@ -13,5 +13,9 @@ public class Arremesso {
 	
 	int getPinosDerrubados() {
 		return pinos;
+	}
+	@Override
+	public String toString(){
+		return String.valueOf(pinos);
 	}
 }
