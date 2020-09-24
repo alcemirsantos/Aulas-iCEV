@@ -1,4 +1,4 @@
-package lp1.aula14.prova.q3;
+package lp1.aula13.prova.q3;
 
 public class Triangulo {
 

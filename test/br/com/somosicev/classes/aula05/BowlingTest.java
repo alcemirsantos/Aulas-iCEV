@@ -4,9 +4,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import lp1.aula13.boliche.Arremesso;
-import lp1.aula13.boliche.Boliche;
-import lp1.aula13.boliche.Rodada;
+import lp1.aula14.boliche.Arremesso;
+import lp1.aula14.boliche.Boliche;
+import lp1.aula14.boliche.Rodada;
 
 public class BowlingTest {
 

@@ -1,4 +1,4 @@
-package lp1.aula14.prova.q2;
+package lp1.aula13.prova.q2;
 
 public class ItemDeEstoque {
 

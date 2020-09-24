@@ -1,4 +1,4 @@
-package lp1.aula13.boliche;
+package lp1.aula14.boliche;
 
 import java.util.Random;
 import java.util.Scanner;
