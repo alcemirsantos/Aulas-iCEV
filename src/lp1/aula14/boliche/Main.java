@@ -13,45 +13,6 @@ public class Main {
 		metodoCinco();
 	}
 
-	private static void metodoCinco() {
-		Scanner sc = new Scanner(System.in);
-		Boliche b = new Boliche();
-		int rodadas = 1;
-		while (rodadas < 11) {
-			System.out.println("[Rodada " + rodadas + "]:");
-			System.out.print("(Arremesso 1):");
-			Arremesso primeiro = new Arremesso(Integer.valueOf(sc.nextLine()));
-			if (primeiro.getPinosDerrubados() == 10) {
-				// foi strike.
-				b.rodadas[rodadas - 1] = new Rodada(primeiro, null);
-				rodadas++;
-				continue;
-			}
-			System.out.print("(Arremesso 2):");
-			Arremesso segundo = new Arremesso(Integer.valueOf(sc.nextLine()));
-			b.rodadas[rodadas - 1] = new Rodada(primeiro, segundo);
-			rodadas++;
-		}
-		if (b.rodadas[rodadas - 2].foiSpare()) {
-			System.out.println("(Arremesso Bônus):");
-			Arremesso bonus = new Arremesso(Integer.valueOf(sc.nextLine()));
-			b.rodadas[rodadas-1] = new Rodada(bonus, null);
-		} else if (b.rodadas[rodadas - 2].foiStrike()) {
-			System.out.print("(Arremesso Bônus 1):");
-			Arremesso bonusUm = new Arremesso(Integer.valueOf(sc.nextLine()));
-			Arremesso bonusDois = null;
-			if (bonusUm.getPinosDerrubados() == 10) {
-				System.out.print("(Arremesso Bônus 2):");
-				bonusDois = new Arremesso(Integer.valueOf(sc.nextLine()));
-			}
-			b.rodadas[rodadas-1] = new Rodada(bonusUm, null);
-			b.rodadas[rodadas] = new Rodada(bonusDois, null);
-
-		}
-		System.out.println(b);
-		sc.close();
-	}
-
 	private static void metodoUm() {
 		Boliche b = new Boliche();
 
@@ -107,6 +68,44 @@ public class Main {
 		sc.close();
 	}
 
+	private static void metodoCinco() {
+		Scanner sc = new Scanner(System.in);
+		Boliche b = new Boliche();
+		int rodadas = 1;
+		while (rodadas < 11) {
+			System.out.println("[Rodada " + rodadas + "]:");
+			System.out.print("(Arremesso 1):");
+			Arremesso primeiro = new Arremesso(Integer.valueOf(sc.nextLine()));
+			if (primeiro.getPinosDerrubados() == 10) {
+				// foi strike.
+				b.rodadas[rodadas - 1] = new Rodada(primeiro, null);
+				rodadas++;
+				continue;
+			}
+			System.out.print("(Arremesso 2):");
+			Arremesso segundo = new Arremesso(Integer.valueOf(sc.nextLine()));
+			b.rodadas[rodadas - 1] = new Rodada(primeiro, segundo);
+			rodadas++;
+		}
+		if (b.rodadas[rodadas - 2].foiSpare()) {
+			System.out.println("(Arremesso Bônus):");
+			Arremesso bonus = new Arremesso(Integer.valueOf(sc.nextLine()));
+			b.rodadas[rodadas-1] = new Rodada(bonus, null);
+		} else if (b.rodadas[rodadas - 2].foiStrike()) {
+			System.out.print("(Arremesso Bônus 1):");
+			Arremesso bonusUm = new Arremesso(Integer.valueOf(sc.nextLine()));
+			Arremesso bonusDois = null;
+			if (bonusUm.getPinosDerrubados() == 10) {
+				System.out.print("(Arremesso Bônus 2):");
+				bonusDois = new Arremesso(Integer.valueOf(sc.nextLine()));
+			}
+			b.rodadas[rodadas-1] = new Rodada(bonusUm, null);
+			b.rodadas[rodadas] = new Rodada(bonusDois, null);
+
+		}
+		System.out.println(b);
+		sc.close();
+	}
 	/**
 	 * Cria e retorna uma rodada baseado nos parâmetros
 	 */
