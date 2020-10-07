@@ -39,4 +39,14 @@ public class Tarefa {
 		this.status = status;
 	}
 	
+//	
+//	@Override
+//	public boolean equals(Object t) {
+//		i
+//		if(t== null) return false;
+//		if(this.descricao.equals(t.getDescricao()) && 
+//				this.dataLimite.equals(t.getDataLimite())) return true;
+//		return false;
+//	}
+	
 }
