@@ -8,7 +8,7 @@ public class GereciadorDeTarefas {
 	public static void main(String[] args) {
 
 		ArrayList<Tarefa> bd = new ArrayList<Tarefa>();
-		
+
 		// CRUD (criar, remover, atualizar, buscar)
 
 		// ToDo's
@@ -31,31 +31,30 @@ public class GereciadorDeTarefas {
 				break;
 			case 2: // buscar
 				System.out.println("..escolheu buscar!");
-				 
+
 				Tarefa encontrada = buscarTarefa(bd);
-				if(encontrada !=null)
+				if (encontrada != null)
 					System.out.println("Fim dos resultados!");
 				else
 					System.out.println("Busca sem resultados!");
-				
 
 				break;
 			case 3: // atualizar
 				System.out.println("..escolheu atualizar!");
-				
+
 				Tarefa aux = buscarTarefa(bd);
 				String novaDescricao = IU.coletarDescricaoDaTarefa();
 				GregorianCalendar novaData = IU.criarDataDeFinalizacao();
 				boolean novoStatus = IU.coletarStatus();
-				
+
 				aux.setDescricao(novaDescricao);
 				aux.setDataLimite(novaData);
 				aux.setStatus(novoStatus);
-				
+
 				imprimirLista(bd);
-				
+
 				break;
-				
+
 			case 4: // remover
 				System.out.println("...escolheu remover!");
 
@@ -64,13 +63,16 @@ public class GereciadorDeTarefas {
 
 				boolean flag = false;
 				for (Tarefa t : bd) {
-					if (t.getDataLimite().equals(tmp.getDataLimite())
-							&& t.getDescricao().equals(tmp.getDescricao())) {
+					if (t.getDataLimite().equals(tmp.getDataLimite()) && t.getDescricao().equals(tmp.getDescricao())) {
 						flag = true;
 						tmp = t;
 					}
 				}
+
 				if (flag)
+					bd.remove(tmp);
+
+				if (bd.contains(tmp))
 					bd.remove(tmp);
 
 				imprimirLista(bd);
@@ -88,8 +90,8 @@ public class GereciadorDeTarefas {
 
 	private static Tarefa buscarTarefa(ArrayList<Tarefa> bd) {
 		String descricao = IU.coletarDescricaoDaTarefa();
-		for(Tarefa t: bd) {
-			if(t.getDescricao().equals(descricao)) {
+		for (Tarefa t : bd) {
+			if (t.getDescricao().equals(descricao)) {
 				System.out.println("Resultado da Busca:");
 				imprimirTarefa(t);
 				return t;
@@ -107,10 +109,10 @@ public class GereciadorDeTarefas {
 			imprimirTarefa(t);
 		}
 	}
-	
+
 	static void imprimirTarefa(Tarefa t) {
 		System.out.println("[" + traduzGC(t.getDataLimite()) + "] " + t.getDescricao());
-	} 
+	}
 
 	static String traduzGC(GregorianCalendar gc) {
 		return gc.get(GregorianCalendar.DAY_OF_MONTH) + "/" + gc.get(GregorianCalendar.MONTH) + "/"

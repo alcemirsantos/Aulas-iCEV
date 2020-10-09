@@ -13,13 +13,13 @@ public class Tabuleiro {
 	}
 
 	public void executaJogada(Jogada nova) {
-		Zona alvo = nova.getZona();
-		Jogador jogador = nova.getJogador();
-		marcar(alvo, jogador.getSimbolo());
+//		Zona alvo = nova.getZona();
+//		Jogador jogador = nova.getJogador();
+//		marcar(alvo, jogador.getSimbolo());
 	}
 
-	private marcar(Zona alvo, String simbolo) {
-	}
+//	private void marcar(Zona alvo, String simbolo) {
+//	}
 
 	public String imprimeVencedor() {
 		// TODO Auto-generated method stub

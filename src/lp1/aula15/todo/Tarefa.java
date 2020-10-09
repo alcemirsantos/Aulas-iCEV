@@ -7,7 +7,7 @@ public class Tarefa {
 	private String descricao;
 	private GregorianCalendar dataLimite;
 	private boolean status;
-	
+
 	public Tarefa(String descricao, GregorianCalendar dataLimite, boolean status) {
 		super();
 		this.descricao = descricao;
@@ -38,15 +38,25 @@ public class Tarefa {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
-	
+
 	@Override
 	public boolean equals(Object t) {
-		
-		if(t== null) return false;
-		if(this.descricao.equals(t.getDescricao()) && 
-				this.dataLimite.equals(t.getDataLimite())) return true;
+		if (t == null)
+			return false;
+		Tarefa tmp;
+//		tmp = (t instanceof Tarefa)? (Tarefa)t: null;
+//		if(tmp ==null) return false;
+
+		if (t instanceof Tarefa) {
+			tmp = (Tarefa) t;
+		} else {
+			return false;
+		}
+
+		if (this.getDescricao().equals(tmp.getDescricao()) && 
+				this.getDataLimite().equals(tmp.getDataLimite()))
+			return true;
 		return false;
 	}
-	
+
 }

@@ -7,9 +7,12 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Empregado e = new Empregado("Fulano de Tal", "134235345-234");
+		Empregado e1 = new Empregado();
+		Empregado e2 = new Empregado();
 		
-		System.out.println(e);
+		System.out.println(e1);
+		System.out.println(e2);
+		System.out.println(e1.equals(e2));
 	
 		
 //		Caixa c;

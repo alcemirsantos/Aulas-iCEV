@@ -13,6 +13,10 @@ public class Empregado {
 		this("um empregado", umaCarteira);
 	}
 	
+	public Empregado(int umaCarteira) {
+		this("um empregado", String.valueOf(umaCarteira));
+	}
+	
 	public Empregado(String umNome, String umaCarteira) {
 		this.nome = umNome;
 		this.cateriraDeTrabalho = umaCarteira;
@@ -35,5 +39,7 @@ public class Empregado {
 //		sb.append(" ["+this.cateriraDeTrabalho+ "]");
 //		return sb.toString();
 	}
+	
+
 
 }
