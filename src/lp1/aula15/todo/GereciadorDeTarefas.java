@@ -2,12 +2,18 @@ package lp1.aula15.todo;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class GereciadorDeTarefas {
 
 	public static void main(String[] args) {
 
 		ArrayList<Tarefa> bd = new ArrayList<Tarefa>();
+		Map<String, List<Tarefa>> bd2 = new HashMap<String, List<Tarefa>>(); 
+		
+		
 
 		// CRUD (criar, remover, atualizar, buscar)
 
