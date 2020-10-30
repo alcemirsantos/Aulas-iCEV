@@ -1,10 +1,9 @@
-package lp1.aula14.jogodavelha;
+package lp1.aula24.jogodavelha.entidades;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import br.com.alcemirsantos.tictactoe.models.Position;
 
 public class Tabuleiro {
 
@@ -26,12 +25,7 @@ public class Tabuleiro {
 	}
 
 	public void executar(Jogada nova) {
-		Zona alvo = nova.getZona();
-		Jogador jogador = nova.getJogador();
-		marcar(alvo, jogador.getSimbolo());
-	}
-
-	private void marcar(Zona alvo, String simbolo) {
+		
 	}
 
 	public String imprimeVencedor() {

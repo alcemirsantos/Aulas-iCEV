@@ -1,4 +1,4 @@
-package lp1.aula14.jogodavelha;
+package lp1.aula24.jogodavelha.entidades;
 
 public class Jogada {
 

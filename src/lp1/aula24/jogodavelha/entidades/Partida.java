@@ -1,7 +1,4 @@
-package lp1.aula24.jogodavelha;
-
-import lp1.aula14.jogodavelha.Jogador;
-import lp1.aula14.jogodavelha.Tabuleiro;
+package lp1.aula24.jogodavelha.entidades;
 
 public class Partida {
 //	Jogadores

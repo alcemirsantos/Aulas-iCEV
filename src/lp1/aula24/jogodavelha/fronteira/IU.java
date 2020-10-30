@@ -1,11 +1,13 @@
-package lp1.aula24.jogodavelha;
+package lp1.aula24.jogodavelha.fronteira;
 
 import java.util.Scanner;
 
-import lp1.aula14.jogodavelha.Coordenada;
-import lp1.aula14.jogodavelha.Jogada;
-import lp1.aula14.jogodavelha.Jogador;
-import lp1.aula14.jogodavelha.Tabuleiro;
+import lp1.aula24.jogodavelha.entidades.Coordenada;
+import lp1.aula24.jogodavelha.entidades.Jogada;
+import lp1.aula24.jogodavelha.entidades.Jogador;
+import lp1.aula24.jogodavelha.entidades.Tabuleiro;
+
+
 
 public class IU {
 

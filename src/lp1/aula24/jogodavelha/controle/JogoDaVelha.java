@@ -1,13 +1,14 @@
-package lp1.aula14.jogodavelha;
+package lp1.aula24.jogodavelha.controle;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
-import lp1.aula24.jogodavelha.IU;
-import lp1.aula24.jogodavelha.Partida;
-import lp1.aula24.jogodavelha.Resultado;
+import lp1.aula24.jogodavelha.entidades.Jogada;
+import lp1.aula24.jogodavelha.entidades.Jogador;
+import lp1.aula24.jogodavelha.entidades.Partida;
+import lp1.aula24.jogodavelha.entidades.Resultado;
+import lp1.aula24.jogodavelha.fronteira.IU;
 
 public class JogoDaVelha {
 
@@ -41,6 +42,8 @@ public class JogoDaVelha {
 		// armazernar o resultado
 		atual.setResultado(new Resultado());
 		historicoDePartidas.add(nova);
+		
+		
 	}
 
 	private Jogador quemJoga(int rodada) {
@@ -55,39 +58,4 @@ public class JogoDaVelha {
 			
 		}
 	}
-
-	public static void main(String[] args) {
-		// saber quem são os jogadores
-		Scanner sc = new Scanner(System.in);
-
-		// gerar o tabuleiro
-		Tabuleiro t = new Tabuleiro();
-
-		// enquanto jogadas <9 e não tiver vencedor fazer:
-		int numJogadas = 1;
-		while (numJogadas < 9 && !t.temVencedor()) {
-			// --- mostrar o estado atual tabuleiro
-			t.mostrarTabuleiro();
-			// --- quem joga?
-			Jogador daVez = numJogadas % 2 == 0 ? jogadorDois : jogadorUm;
-			// --- qual a jogada?
-			Jogada nova = coletaJogada();
-			// --- executar a jogada
-			t.executaJogada(nova);
-
-			numJogadas++;
-		}
-		// imprimir o resultado
-		if (numJogadas >= 9 && !t.temVencedor()) {
-			System.out.println("Deu velha!");
-		} else {
-			System.out.println(t.imprimeVencedor());
-		}
-	}
-
-	private static Jogada coletaJogada() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

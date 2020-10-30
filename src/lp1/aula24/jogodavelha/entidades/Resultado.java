@@ -1,4 +1,4 @@
-package lp1.aula24.jogodavelha;
+package lp1.aula24.jogodavelha.entidades;
 
 import java.util.List;
 
