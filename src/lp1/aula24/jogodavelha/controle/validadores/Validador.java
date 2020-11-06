@@ -1,4 +1,4 @@
-package lp1.aula24.jogodavelha.controle;
+package lp1.aula24.jogodavelha.controle.validadores;
 
 /**
  * Contrato de validacao de objetos do Tipo T.
@@ -9,6 +9,6 @@ package lp1.aula24.jogodavelha.controle;
 public interface Validador<T> {
 
 	
- public boolean validar(T t);
+ public Object validar(T t);
 	
 }

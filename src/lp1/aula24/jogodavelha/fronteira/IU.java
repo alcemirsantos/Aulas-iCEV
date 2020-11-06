@@ -5,17 +5,18 @@ import java.util.Scanner;
 import lp1.aula24.jogodavelha.entidades.Coordenada;
 import lp1.aula24.jogodavelha.entidades.Jogada;
 import lp1.aula24.jogodavelha.entidades.Jogador;
+import lp1.aula24.jogodavelha.entidades.Resultado;
 import lp1.aula24.jogodavelha.entidades.Tabuleiro;
-
 
 
 public class IU {
 
-	private static Scanner teclado;
+	private static Scanner teclado = new Scanner(System.in);
 
 	public static boolean jogadorAindaQuerJogar() {
-		// TODO Auto-generated method stub
-		return false;
+		System.out.print("Continuar jogando? (s/n): ");
+		String resposta = teclado.nextLine();
+		return resposta.toLowerCase().equals("s")? true:false;
 	}
 
 	public static Jogador[] coletaJogadores() {
@@ -30,7 +31,7 @@ public class IU {
 	}
 
 	public static void exibir(Tabuleiro tabuleiro) {
-		System.out.println("Estado atual do Tabuleiro:");
+		System.out.println("Estado do Tabuleiro:");
 		System.out.println(tabuleiro);
 	}
 
@@ -38,6 +39,12 @@ public class IU {
 		System.out.println("Jogador:" + jogador + "começa!");
 
 	}
+	
+	public static void exibir(Resultado resultado) {
+		System.out.println("========[ RESULTADO ]=======");
+		System.out.println(resultado);
+	}
+
 
 	public static Jogada coletaJogada(Jogador quemJoga) {
 		System.out.print("Digite a posição:");
@@ -46,4 +53,6 @@ public class IU {
 		int y = Integer.valueOf(posicao[1]);
 		return new Jogada(new Coordenada(x,y), quemJoga);
 	}
+
+	
 }

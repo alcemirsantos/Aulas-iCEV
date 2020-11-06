@@ -6,24 +6,22 @@ import lp1.aula24.jogodavelha.entidades.Tabuleiro;
 import lp1.aula24.jogodavelha.fronteira.IU;
 
 public class Main {
-	
+
 	public static void main(String[] args) {
-		
-		while(IU.jogadorAindaQuerJogar()) {
-			JogoDaVelha jogo = new JogoDaVelha();
-		
-			Partida partida = new Partida(IU.coletaJogadores(), new Tabuleiro());
-			
-			jogo.iniciar(partida);
-			
+
+		JogoDaVelha jogo = JogoDaVelha.getInstancia();
+
+		do {
+//			Partida partida = new Partida(IU.coletaJogadores(), new Tabuleiro());
+//			jogo.iniciar(partida);
+
+			jogo.iniciar();
+
 			// imprimir o resultado
-			System.out.println(partida.getResultado());
-			
-		}
-		System.out.println("Jogo da Velha iCEV agrade a preferência! :-)");
+//			System.out.println(partida.getResultado());
+		} while (IU.jogadorAindaQuerJogar());
+
+		System.out.println("Jogo da Velha do Prof. Alcemir agradece a preferência! :-)");
 	}
-
-
-
 
 }
