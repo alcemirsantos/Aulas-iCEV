@@ -23,6 +23,7 @@ public class JogoDaVelha {
 
 	private JogoDaVelha() {
 		historicoDePartidas = new ArrayList<Partida>();
+		historicoDeResultados = new ArrayList<Resultado>();
 		
 	}
 
@@ -32,6 +33,7 @@ public class JogoDaVelha {
 		return instancia;
 	}
 
+	@Deprecated
 	public void iniciar(Partida nova) {
 		atual = nova;
 

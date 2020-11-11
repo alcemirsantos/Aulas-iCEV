@@ -13,7 +13,7 @@ public class PartidaEmAndamento implements Estado {
 		Partida atual = (Partida) contexto;
 
 		Jogador daVez = atual.quemJoga();
-		System.out.println("## Rodada "+atual.getRodadaAtual()+ " ##");
+		System.out.println("\n## Rodada "+atual.getRodadaAtual()+ " ##");
 		System.out.println(">> "+daVez+ " joga.");
 		
 		IU.exibir(atual.getTabuleiro());
