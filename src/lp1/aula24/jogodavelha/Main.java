@@ -11,6 +11,8 @@ public class Main {
 
 		JogoDaVelha jogo = JogoDaVelha.getInstancia();
 
+		System.out.println("## Jogo da Velha do Prof. Alcemir! ##");
+		System.out.println("\t Have fun!  :-)");
 		do {
 //			Partida partida = new Partida(IU.coletaJogadores(), new Tabuleiro());
 //			jogo.iniciar(partida);
@@ -21,7 +23,7 @@ public class Main {
 //			System.out.println(partida.getResultado());
 		} while (IU.jogadorAindaQuerJogar());
 
-		System.out.println("Jogo da Velha do Prof. Alcemir agradece a preferência! :-)");
+		System.out.println("Prof. Alcemir agradece a preferência! :-)");
 	}
 
 }

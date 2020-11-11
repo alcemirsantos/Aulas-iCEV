@@ -2,6 +2,7 @@ package lp1.aula24.jogodavelha.controle.estados;
 
 import lp1.aula24.jogodavelha.controle.comandos.ComandoMarcar;
 import lp1.aula24.jogodavelha.entidades.Jogada;
+import lp1.aula24.jogodavelha.entidades.Jogador;
 import lp1.aula24.jogodavelha.entidades.Partida;
 import lp1.aula24.jogodavelha.fronteira.IU;
 
@@ -11,11 +12,14 @@ public class PartidaEmAndamento implements Estado {
 	public void acao(Object contexto) {
 		Partida atual = (Partida) contexto;
 
-		System.out.println("## Rodada "+atual.getRodadaAtual());
+		Jogador daVez = atual.quemJoga();
+		System.out.println("## Rodada "+atual.getRodadaAtual()+ " ##");
+		System.out.println(">> "+daVez+ " joga.");
 		
 		IU.exibir(atual.getTabuleiro());
 		// criar jogada
-		Jogada nova = IU.coletaJogada(atual.quemJoga());
+		
+		Jogada nova = IU.coletaJogada(daVez);
 		// validar jogada
 		// executar jogada
 		ComandoMarcar comando = new ComandoMarcar(atual.getTabuleiro(), nova);

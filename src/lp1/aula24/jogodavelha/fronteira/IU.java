@@ -47,7 +47,7 @@ public class IU {
 
 
 	public static Jogada coletaJogada(Jogador quemJoga) {
-		System.out.print("Digite a posição:");
+		System.out.print(quemJoga + ", digite a posição:");
 		String[] posicao = teclado.nextLine().split(",");
 		int x = Integer.valueOf(posicao[0]);
 		int y = Integer.valueOf(posicao[1]);

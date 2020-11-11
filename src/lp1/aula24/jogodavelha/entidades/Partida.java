@@ -72,6 +72,7 @@ public class Partida {
 	}
 
 	public Resultado executar() {
+		System.out.println("");
 		// enquanto partida em andamento
 		while (!(this.estado instanceof PartidaFinalizada)) {
 			this.estado.acao(this);

@@ -16,12 +16,14 @@ import lp1.aula24.jogodavelha.fronteira.IU;
 public class JogoDaVelha {
 
 	private static JogoDaVelha instancia;
-	private List<Partida> historicoDePartidas = new ArrayList<Partida>();
+	private List<Partida> historicoDePartidas;
+	private List<Resultado> historicoDeResultados;
 	private Partida atual;
 	private int ultimoAJogar;
 
 	private JogoDaVelha() {
 		historicoDePartidas = new ArrayList<Partida>();
+		
 	}
 
 	public static JogoDaVelha getInstancia() {
@@ -60,9 +62,12 @@ public class JogoDaVelha {
 	}
 
 	public void iniciar() {
+		System.out.println(">> Inciando a Partida #"+(historicoDePartidas.size()+1));
 		Partida nova = new Partida(IU.coletaJogadores(), new Tabuleiro());
-		nova.executar();
+		Resultado r = nova.executar();
 		historicoDePartidas.add(nova);
+		historicoDeResultados.add(r);
+		System.out.println(">> Partida #"+(historicoDePartidas.size()+1)+ " finalizada!");
 	}
 	
 	

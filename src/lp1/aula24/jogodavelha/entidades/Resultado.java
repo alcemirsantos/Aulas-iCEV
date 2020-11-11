@@ -10,7 +10,9 @@ public class Resultado {
 	private Integer numeroDeRodadas;
 
 	public Resultado(TipoResultado tipo, List<Jogador> jogadores, Integer numRodadas){
-		
+		this.tipo = tipo;
+		this.vencedor = jogadores;
+		this.numeroDeRodadas = numRodadas;
 	}
 	
 	@Override
@@ -20,7 +22,7 @@ public class Resultado {
 			sb.append(" do "+vencedor.get(0));
 		else
 			sb.append(" entre "+vencedor.get(0)+ " e "+vencedor.get(1));
-		sb.append(" após" + numeroDeRodadas + " jogadas.");
+		sb.append(" após " + numeroDeRodadas + " jogadas.");
 		return sb.toString();
 	}
 
