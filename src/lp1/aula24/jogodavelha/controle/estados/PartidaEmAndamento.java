@@ -20,7 +20,7 @@ public class PartidaEmAndamento implements Estado {
 		// criar jogada
 		
 		Jogada nova = IU.coletaJogada(daVez);
-		// validar jogada
+		// TODO validar jogada
 		// executar jogada
 		ComandoMarcar comando = new ComandoMarcar(atual.getTabuleiro(), nova);
 		Estado novo = comando.executar();
